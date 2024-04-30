@@ -127,7 +127,11 @@ console.log(hottestDays(numbers,25))
 
 //numbers = [10, 13, 20, 25, 38, 35, 40]
 const logHottestDays = function (temperatures, threshhold) {
-       return temperatures.map( (num)=> (num - 32) * (5/9)  ).filter( (num)=> num > threshhold ).forEach( (num)=> console.log(num * 9/5 + 32))
+
+       let x = toCelsius(temperatures)
+       let y =  hottestDays(x ,threshhold)
+       y.forEach((num)=> console.log(num * 9/5 + 32))
+     // temperatures.map( (num)=> (num - 32) * (5/9)  ).filter( (num)=> num > threshhold ).forEach( (num)=> console.log(num * 9/5 + 32))
 };
 
 logHottestDays(numbers ,  -1 )
